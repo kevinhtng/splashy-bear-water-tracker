@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐻 Splashy Bear Water Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Water Fill Container (Background) -->
+    <div class="water-container">
+        <div class="water" id="water"></div>
+        <div class="water-shine"></div>
+    </div>
+
+    <!-- Bear Character -->
+    <div class="bear-container" id="bearContainer">
+        <div class="bear">
+            <div class="bear-head">
+                <div class="ear ear-left"></div>
+                <div class="ear ear-right"></div>
+                <div class="face">
+                    <div class="eye eye-left">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="eye eye-right">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="snout">
+                        <div class="nose"></div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bear-body"></div>
+        </div>
+    </div>
+
+    <!-- Celebration Elements -->
+    <div class="celebration" id="celebration">
+        <div class="rubber-ducky">🦆</div>
+        <div class="confetti-container" id="confettiContainer"></div>
+        <div class="congrats-message">🎉 Splashing Success! You did it! 🎉</div>
+    </div>
+
+    <!-- Forest Decorations -->
+    <div class="forest-decoration">
+        <div class="tree tree-1">🌲</div>
+        <div class="tree tree-2">🌲</div>
+        <div class="tree tree-3">🌳</div>
+        <div class="cloud cloud-1">☁️</div>
+        <div class="cloud cloud-2">☁️</div>
+        <div class="mountain mountain-1">⛰️</div>
+    </div>
+
+    <!-- Main UI Container -->
+    <div class="ui-container">
+        <header class="header">
+            <h1>🐻 Splashy Bear Water Tracker 💧</h1>
+            <p class="tagline">Help our forest friend stay hydrated!</p>
+        </header>
+
+        <!-- Drinker Selection Section -->
+        <section class="drinker-section">
+            <h2>🌟 Choose Your Bear Buddy</h2>
+            <div class="drinker-list" id="drinkerList"></div>
+            <button class="btn btn-add-drinker" id="addDrinkerBtn">➕ Add New Bear Buddy</button>
+        </section>
+
+        <!-- Active Drinker Display -->
+        <section class="active-drinker" id="activeDrinkerSection" style="display: none;">
+            <div class="drinker-info">
+                <h2 id="activeDrinkerName"></h2>
+                <p class="daily-goal">Daily Goal: <span id="dailyGoal">0</span> oz</p>
+                <p class="current-intake">Today's Splashes: <span id="currentIntake">0</span> oz</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <span class="progress-text" id="progressText">0%</span>
+            </div>
+
+            <!-- Drinking Button -->
+            <div class="action-buttons">
+                <button class="btn btn-drink" id="drinkBtn">
+                    <span class="btn-icon">💧</span>
+                    <span class="btn-text">Make a Splash!</span>
+                    <span class="btn-amount">(16.9 oz)</span>
+                </button>
+                <button class="btn btn-reset" id="resetDayBtn">🔄 Reset Today</button>
+            </div>
+
+            <!-- Weekly History -->
+            <div class="history-section">
+                <h3>📅 Last 7 Days</h3>
+                <div class="history-chart" id="historyChart"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal for Adding Drinker -->
+    <div class="modal" id="drinkerModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>🐻 Create Your Bear Buddy Profile</h2>
+            <form id="drinkerForm">
+                <div class="form-group">
+                    <label for="drinkerName">🏷️ Name:</label>
+                    <input type="text" id="drinkerName" required placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="drinkerWeight">⚖️ Weight (lbs):</label>
+                    <input type="number" id="drinkerWeight" required placeholder="150" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="drinkerHeight">📏 Height (inches):</label>
+                    <input type="number" id="drinkerHeight" required placeholder="68" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="drinkerAge">🎂 Age:</label>
+                    <input type="number" id="drinkerAge" required placeholder="25" min="1" max="120">
+                </div>
+                <button type="submit" class="btn btn-submit">🎉 Create Buddy</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/waterCalculator.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
