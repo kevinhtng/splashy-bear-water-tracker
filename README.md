@@ -1,5 +1,3 @@
-*Project documentation and setup instructions*
-````markdown
 # 🐻💧 Splashy Bear Water Tracker
 
 An adorable, interactive water intake tracker that helps you stay hydrated with a cute bear companion in a forest lake environment!
